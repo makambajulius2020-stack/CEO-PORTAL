@@ -34,7 +34,7 @@ function cn(...inputs: ClassValue[]) {
 }
 
 const branchConfig = [
-    { id: 'all', name: 'Group Consolidated', color: '#d97706', accent: 'gold' },
+    { id: 'all', name: 'Group Consolidated', color: '#d97706', accent: 'gold', font: 'font-serif' },
     { id: 'patiobella', name: 'Patiobella', color: '#d97706', accent: 'gold', font: 'font-serif' },
     { id: 'eateroo', name: 'Eateroo', color: '#10b981', accent: 'emerald', font: 'font-sans' },
 ] as const;

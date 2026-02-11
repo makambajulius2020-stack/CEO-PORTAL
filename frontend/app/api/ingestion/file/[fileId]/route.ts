@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { arrayBufferFromBase64, getFile } from '../../_mock/store';
+import { arrayBufferFromBase64, getFile } from '../../../_mock/store';
 
 export async function GET(req: Request, ctx: { params: Promise<{ fileId: string }> }) {
   const { fileId } = await ctx.params;
