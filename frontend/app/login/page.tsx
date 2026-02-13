@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 export default function LoginPage() {
     const [email, setEmail] = useState('');
@@ -49,6 +50,11 @@ export default function LoginPage() {
             {/* Glassmorphism Card */}
             <div className="relative z-10 w-full max-w-md p-8 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl">
                 <div className="text-center mb-8">
+                    <div className="flex items-center justify-center mb-4">
+                        <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center">
+                            <Image src="/ceo-logo.jpeg" alt="Hugamara" width={48} height={48} className="rounded-xl" />
+                        </div>
+                    </div>
                     <h1 className="text-4xl font-serif font-bold text-[#d97706] mb-2">Hugamara</h1>
                     <p className="text-white/75 font-light tracking-widest text-sm uppercase">CEO Executive Portal</p>
                 </div>

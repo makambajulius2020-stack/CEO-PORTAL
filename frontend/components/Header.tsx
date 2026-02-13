@@ -1,12 +1,12 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { useGlobal } from '@/context/GlobalContext';
 import {
     Bell,
     Download,
     User,
-    Building2,
     Calendar,
     Search
 } from 'lucide-react';
@@ -22,7 +22,7 @@ export default function Header() {
             <div className="flex items-center gap-8 relative z-10">
                 <div className="flex items-center gap-4 group cursor-pointer">
                     <div className="w-12 h-12 bg-[#d97706] rounded-2xl flex items-center justify-center shadow-[0_0_40px_rgba(217,119,6,0.3)] ring-1 ring-white/10 group-hover:scale-105 transition-all duration-500">
-                        <Building2 className="text-white w-6 h-6" />
+                        <Image src="/ceo-logo.jpeg" alt="Hugamara" width={28} height={28} className="rounded-lg" />
                     </div>
                     <div>
                         <h1 className="text-xl md:text-2xl font-serif font-black text-white leading-none tracking-tight uppercase italic">
