@@ -77,8 +77,8 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
 
             <div className="p-6 relative z-10 flex flex-col h-full">
                 <div className="flex items-center gap-4 mb-10 group cursor-pointer">
-                    <div className="w-14 h-14 bg-transparent rounded-2xl flex items-center justify-center ring-1 ring-white/10 group-hover:rotate-3 transition-all duration-500">
-                        <Image src="/ceo-logo.jpeg" alt="Hugamara" width={44} height={44} className="rounded-xl" priority />
+                    <div className="relative w-14 h-14 rounded-2xl overflow-hidden group-hover:rotate-3 transition-all duration-500">
+                        <Image src="/ceo-logo.jpeg" alt="Hugamara" fill className="object-cover" sizes="56px" priority />
                     </div>
                     <div>
                         <h1 className="text-lg font-serif font-black text-white leading-none tracking-tight uppercase italic">Hugamara</h1>

@@ -21,8 +21,8 @@ export default function Header() {
 
             <div className="flex items-center gap-8 relative z-10">
                 <div className="flex items-center gap-4 group cursor-pointer">
-                    <div className="w-16 h-16 bg-transparent rounded-2xl flex items-center justify-center ring-1 ring-white/10 group-hover:scale-105 transition-all duration-500">
-                        <Image src="/ceo-logo.jpeg" alt="Hugamara" width={52} height={52} className="rounded-xl" priority />
+                    <div className="relative w-16 h-16 rounded-2xl overflow-hidden group-hover:scale-105 transition-all duration-500">
+                        <Image src="/ceo-logo.jpeg" alt="Hugamara" fill className="object-cover" sizes="64px" priority />
                     </div>
                     <div>
                         <h1 className="text-xl md:text-2xl font-serif font-black text-white leading-none tracking-tight uppercase italic">
