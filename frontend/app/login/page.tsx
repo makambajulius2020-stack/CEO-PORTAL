@@ -51,8 +51,8 @@ export default function LoginPage() {
             <div className="relative z-10 w-full max-w-md p-8 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl">
                 <div className="text-center mb-8">
                     <div className="flex items-center justify-center mb-4">
-                        <div className="relative w-24 h-24 rounded-3xl overflow-hidden">
-                            <Image src="/ceo-logo.jpeg" alt="Hugamara" fill className="object-cover" sizes="96px" priority />
+                        <div className="relative w-24 h-24 rounded-3xl overflow-hidden border-0 ring-0 bg-transparent">
+                            <Image src="/ceo-logo.jpeg" alt="Hugamara" fill className="object-contain" sizes="96px" quality={100} priority />
                         </div>
                     </div>
                     <h1 className="text-4xl font-serif font-bold text-[#d97706] mb-2">Hugamara</h1>
