@@ -5,7 +5,9 @@ export async function POST(req: Request) {
   const email = String(body?.email || '').trim().toLowerCase();
   const password = String(body?.password || '').trim();
 
-  if (email === 'ceo@hugamara.com' && password === 'CEO@2026!') {
+  const allowedPasswords = new Set(['CEO@2026!', 'CEO@2024!']);
+
+  if (email === 'ceo@hugamara.com' && allowedPasswords.has(password)) {
     return NextResponse.json({ access_token: 'mock_token_ceo', token_type: 'bearer' });
   }
 
