@@ -18,14 +18,28 @@ export default function LoginPage() {
 
         try {
             const apiUrl = process.env.NEXT_PUBLIC_API_URL || '';
-            const url = apiUrl ? `${apiUrl}/api/auth/login` : `/api/auth/login`;
-            const response = await fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ email, password }),
-            });
+            const primaryUrl = apiUrl ? `${apiUrl}/api/auth/login` : `/api/auth/login`;
+
+            const attempt = async (url: string) => {
+                return fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email, password }),
+                });
+            };
+
+            let response: Response;
+            try {
+                response = await attempt(primaryUrl);
+            } catch {
+                response = await attempt('/api/auth/login');
+            }
+
+            if (!response.ok && apiUrl) {
+                response = await attempt('/api/auth/login');
+            }
 
             if (!response.ok) {
                 throw new Error('Invalid credentials');
@@ -51,8 +65,8 @@ export default function LoginPage() {
             <div className="relative z-10 w-full max-w-md p-8 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl">
                 <div className="text-center mb-8">
                     <div className="flex items-center justify-center mb-4">
-                        <div className="relative w-24 h-24 rounded-3xl overflow-hidden border-0 ring-0 bg-transparent">
-                            <Image src="/ceo-logo.jpeg" alt="Hugamara" fill className="object-contain" sizes="96px" quality={100} priority />
+                        <div className="relative w-20 h-20 rounded-3xl overflow-hidden border-0 ring-0 bg-transparent">
+                            <Image src="/ceo-logo.jpeg" alt="Hugamara" fill className="object-contain" sizes="80px" quality={100} priority />
                         </div>
                     </div>
                     <h1 className="text-4xl font-serif font-bold text-[#d97706] mb-2">Hugamara</h1>
